@@ -33,6 +33,6 @@ fi
 
 echo "create cgzone${ZONE}..."
 mysql -f -u cgyx -pcgyx -e "create database if not exists ${DATABASE}${ZONE} character set 'utf8';"
-mysql -f -u cgyx -pcgyx -B  ${DATABASE} < ${SQLNAME}.sql
+mysql -f -u cgyx -pcgyx -B  ${DATABASE}${ZONE} < ${SQLNAME}.sql
 echo "create cgzone${ZONE} done..."
 

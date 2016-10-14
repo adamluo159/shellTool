@@ -13,7 +13,7 @@ fi
 
 
 echo "clear cgzone${ZONE}..."
-mysql -f -u cgyx -pcgyx -e "drop database cgzone1";
-redis-cli -p ${ZONE} flushdb
+mysql -f -u cgyx -pcgyx -e "drop database cgzone${ZONE}";
+redis-cli -p ${PORT} flushdb
 echo "clear cgzone${ZONE} done..."
-./create_accountDB ${ZONE}
+./create_zoneDB ${ZONE}
