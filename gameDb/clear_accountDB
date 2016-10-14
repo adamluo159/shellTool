@@ -1,4 +1,4 @@
 #!/bin/sh
 
 mysql -f -u cgyx -pcgyx -e "drop database account";
-./createAccountDb
+./create_accountDB

@@ -1,0 +1,11 @@
+#!/bin/sh
+ZONE=$1
+if [[ "x$ZONE" = "x" ]]; then
+    echo "clear cgzoneDB err, pls enter zone num like ./create_zoneDB 1"
+    return
+fi
+
+echo "clear cgzone${ZONE}..."
+mysql -f -u cgyx -pcgyx -e "drop database cgzone1";
+echo "clear cgzone${ZONE} done..."
+./create_accountDB ${ZONE}
