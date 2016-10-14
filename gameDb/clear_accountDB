@@ -1,4 +1,10 @@
 #!/bin/sh
+PORT=$1
+if [[ "x${PORT}" = "x"]]; then
+   echo "should enter a port number"
+   return
+fi
 
 mysql -f -u cgyx -pcgyx -e "drop database account";
+redis-cli -p ${PORT} flushdb
 ./create_accountDB

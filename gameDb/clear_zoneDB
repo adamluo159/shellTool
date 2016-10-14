@@ -1,11 +1,19 @@
 #!/bin/sh
 ZONE=$1
+PORT=$2
 if [[ "x$ZONE" = "x" ]]; then
-    echo "clear cgzoneDB err, pls enter zone num like ./create_zoneDB 1"
+    echo "clear cgzoneDB err, pls enter zone num like ./create_zoneDB 1 6379"
     return
 fi
 
+if [[ "x$PORT" = "x" ]]; then
+    echo "pls enter redis port like ./create_zoneDB 1 6379"
+    return
+fi
+
+
 echo "clear cgzone${ZONE}..."
 mysql -f -u cgyx -pcgyx -e "drop database cgzone1";
+redis-cli -p ${ZONE} flushdb
 echo "clear cgzone${ZONE} done..."
 ./create_accountDB ${ZONE}
