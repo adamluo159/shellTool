@@ -1,8 +1,8 @@
 #!/bin/sh
 PORT=$1
-if [[ "x${PORT}" = "x"]]; then
+if [[ "${PORT}x" = "x" ]]; then
    echo "should enter a port number"
-   return
+   exit
 fi
 
 mysql -f -u cgyx -pcgyx -e "drop database account";
