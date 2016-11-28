@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'Shougo/neocomplete'
 Plugin 'mileszs/ack.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
@@ -24,12 +23,6 @@ set nu
 
 "树形目录开启快捷键设置
 map <F2> :NERDTreeToggle<CR>
-
-"代码补全vim打开就开启
-"let g:neocomplete#enable_at_startup = 1
-
-"vim主题配色 git clone https://github.com/tomasr/molokai.git ~/.vim/colors
-"let g:molokai_original = 1
 
 nmap <F3> :TagbarToggle<CR>
 
@@ -60,5 +53,12 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
     \ }
+
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<Up>"
 
 let g:go_fmt_command = "goimports"
