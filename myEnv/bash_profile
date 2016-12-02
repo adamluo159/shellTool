@@ -6,10 +6,10 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # User specific environment and startup programs
-GOPATH=$HOME/go/src
+GOPATH=$HOME/go/path
 GOROOT=$HOME/go
 GOBIN=$HOME/go/bin
-DO=$GOPATH/github.com/work
+DO=$GOROOT/path/src/github.com/adamluo159
 
 export GOROOT
 export GOBIN
