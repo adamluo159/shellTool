@@ -1,4 +1,6 @@
 #!/bin/sh
+git config --global credential.helper store
+
 cp bash_profile ~/.bash_profile
 cp vimrc ~/.vimrc
 
