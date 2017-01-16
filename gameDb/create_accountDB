@@ -1,40 +1,7 @@
 #!/bin/sh
 
-#ZONE=$1
-#HOST=$2
-#
-#echo ${ZONE}
-#
-#if [[ "x$HOST" = "x" ]]; then
-#    echo "update zone sql localhost"
-#    ./src/init_table.sh ${ZONE} ${HOST}
-#else
-#    echo "update zone sql ${HOST}"
-#    HOSTARG="-h ${HOST}"
-#fi
-#
-#
-#mysql -f -u ezfun -pezfun ${HOSTARG} -e "create database if not exists ezfun${ZONE} character set 'utf8';"
-#
-#echo 'execute src/zone.sql'
-#mysql -f -u ezfun -pezfun ${HOSTARG} -B ezfun${ZONE} < src/zone.sql
-
-
-
-
 DATABASE="gameAccount"
 SQLNAME="../../gameTable/account"
 
-
-#if [[ "x$HOST" = "x" ]]; then
-#    echo "update zone sql localhost"
-#    ./src/init_table.sh ${ZONE} ${HOST}
-#else
-#    echo "update zone sql ${HOST}"
-#    HOSTARG="-h ${HOST}"
-#fi
-
-
 mysql -f -u cgyx -pcgyx -e "create database if not exists ${DATABASE} character set 'utf8';"
 mysql -f -u cgyx -pcgyx -B  ${DATABASE} < ${SQLNAME}.sql
-

@@ -1,29 +1,8 @@
 #!/bin/sh
 
-#ZONE=$1
-#HOST=$2
-#
-#echo ${ZONE}
-#
-#if [[ "x$HOST" = "x" ]]; then
-#    echo "update zone sql localhost"
-#    ./src/init_table.sh ${ZONE} ${HOST}
-#else
-#    echo "update zone sql ${HOST}"
-#    HOSTARG="-h ${HOST}"
-#fi
-#
-#
-#mysql -f -u ezfun -pezfun ${HOSTARG} -e "create database if not exists ezfun${ZONE} character set 'utf8';"
-#
-#echo 'execute src/zone.sql'
-#mysql -f -u ezfun -pezfun ${HOSTARG} -B ezfun${ZONE} < src/zone.sql
-
-
-
-
 DATABASE="cgzone"
 SQLNAME="../../gameTable/zone"
+
 ZONE=$1
 if [[ "x$ZONE" = "x" ]]; then
     echo "create cgzoneDB err, pls enter zone num like ./create_zoneDB 1"
