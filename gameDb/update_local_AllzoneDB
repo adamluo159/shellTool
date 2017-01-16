@@ -1,0 +1,9 @@
+#!/bin/sh 
+ZoneTables=`mysql -u cgyx -pcgyx -e "show databases"`
+arr=$(echo ${ZoneTables}|tr " " "\n")
+
+for zone in ${arr[@]}; do
+	if [[ ${zone} =~ "cgzone" ]]; then
+		./create_zoneDB ${zone##*cgzone}
+	fi
+done
