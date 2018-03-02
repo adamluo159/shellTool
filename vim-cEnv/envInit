@@ -6,3 +6,4 @@ cp vimrc ~/.vimrc
 mkdir ~/.vim
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+wget https://github.com/vim/vim/archive/master.zip ~/

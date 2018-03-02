@@ -9,12 +9,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic' " 语法检测工具 
-Plugin 'scrooloose/nerdcommenter' "注释代码工具 \cc注释当前行 \cu 撤销注释当前行 \cs sexily注释 \cA 行尾注释，切换成输入模式 
+Plugin 'scrooloose/syntastic' " 语法检测工具
+Plugin 'scrooloose/nerdcommenter' "注释代码工具 \cc注释当前行 \cu 撤销注释当前行 \cs sexily注释 \cA 行尾注释，切换成输入模式
 Plugin 'scrooloose/nerdtree' "树状结构文件夹目录
-Plugin 'majutsushi/tagbar' 
+Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs' " 括号自动匹配
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,7 +70,6 @@ set matchtime=5 "对应括号高亮时间(单位是十分之一秒)"
 
 set foldenable  "允许折叠"
 set foldmethod=syntax " 设置语法折叠
-set foldcolumn=0 " 设置折叠区域的宽度
 setlocal foldlevel=1 " 设置折叠层数为
 
 "au BufWinLeave * silent mkview   //自动保存折叠状态
@@ -88,3 +89,6 @@ let g:ycm_seed_identifiers_with_syntax=1    " 语法关键字补全
 let g:ycm_confirm_extra_conf=0  " 打开vim时不再询问是否加载ycm_extra_conf.py配置
 let g:ycm_key_invoke_completion = '<C-a>' " ctrl + a 触发补全
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)"
+
+
+let g:UltiSnipsExpandTrigger="#!"
